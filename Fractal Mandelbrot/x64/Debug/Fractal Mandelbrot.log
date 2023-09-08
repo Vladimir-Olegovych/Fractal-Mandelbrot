@@ -1,6 +1,0 @@
-﻿  Fractal Mandelbrot.cpp
-E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Fractal Mandelbrot.cpp(157,27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Fractal Mandelbrot.cpp(158,48): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Fractal Mandelbrot.cpp(158,43): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Fractal Mandelbrot.cpp(158,38): warning C4244: 'argument': conversion from 'float' to 'BYTE', possible loss of data
-  Fractal Mandelbrot.vcxproj -> E:\Programs\VS\projects\Fractal Mandelbrot\x64\Debug\Fractal Mandelbrot.exe
