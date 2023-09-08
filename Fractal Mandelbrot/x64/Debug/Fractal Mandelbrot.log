@@ -1,0 +1,5 @@
+﻿  Main.cpp
+E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Main.cpp(132,27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Main.cpp(134,31): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Programs\VS\projects\Fractal Mandelbrot\Fractal Mandelbrot\Main.cpp(134,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Fractal Mandelbrot.vcxproj -> E:\Programs\VS\projects\Fractal Mandelbrot\x64\Debug\Fractal Mandelbrot.exe
