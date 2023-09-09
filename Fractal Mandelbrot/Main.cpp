@@ -27,11 +27,11 @@ double abs(const Complex& v)
     return sqrt(v.re * v.re + v.im * v.im);
 }
 //constants
-const short width = 600;
-const short height = 600;
-const short speed = 30;
+const short width = 800;
+const short height = 800;
+const short speed = 60;
 
-int iterations = 1000;
+double iterations = 200;
 int zoom = 200;
 
 int pos_x = 450;
@@ -58,12 +58,11 @@ int main(void)
     glfwMakeContextCurrent(window);
 
     /* Loop until the user closes the window */
+    glLoadIdentity();
+    glOrtho(0, width, height, 0, -1, 1);
+
     while (!glfwWindowShouldClose(window))
     {
-        std::cout << 1 << std::endl;
-
-        glLoadIdentity();
-        glOrtho(0, width, height, 0, -1, 1);
         /* Render here */
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -86,27 +85,28 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         exit(0);
     }
-    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
+    if (key == GLFW_KEY_SPACE)
     {
-        zoom += 100;
+        zoom += zoom/2;
+        pos_x += zoom/2;
     }
 
-    if (key == GLFW_KEY_W && action == GLFW_PRESS)
+    if (key == GLFW_KEY_W)
     {
         pos_y += speed;
     }
 
-    if (key == GLFW_KEY_A && action == GLFW_PRESS)
+    if (key == GLFW_KEY_A)
     {
         pos_x += speed;
     }
 
-    if (key == GLFW_KEY_S && action == GLFW_PRESS)
+    if (key == GLFW_KEY_S)
     {
         pos_y -= speed;
     }
 
-    if (key == GLFW_KEY_D && action == GLFW_PRESS)
+    if (key == GLFW_KEY_D)
     {
         pos_x -= speed;
     }
@@ -114,16 +114,14 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 void display() 
 {
-    int progress = 0;
     glBegin(GL_POINTS);
-    for (int y = 0; y < 600; ++y)
-        for (int x = 0; x < 600; ++x)
+    for (int y = 0; y < height; ++y)
+        for (int x = 0; x < width; ++x)
         {
             Complex z(0, 0);
-            int i = 0;
+            double i = 0;   
             while (i < iterations && abs(z) < 2)
             {
-                progress++;
                 z = sqr(z) + Complex(1.0 * (x - pos_x) / zoom, 1.0 * (y - pos_y) / zoom);
                 ++i;
             }
